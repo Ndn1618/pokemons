@@ -56,6 +56,12 @@ h1 {
 }
 
 .card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  padding-bottom: 10px;
   list-style: none;
   transform-origin: center;
   transform: scale(1) translateZ(0);
@@ -71,8 +77,9 @@ h1 {
   transform: scale(1.05) translateZ(0);
 }
 
-.card-grid:hover > .card:not(:hover) {
-  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+.card__background {
+  display: block;
+  margin-bottom: 10px;
 }
 
 .card__content{
@@ -83,7 +90,7 @@ h1 {
   color: #222222;
   font-size: 0.9rem;
   margin-bottom: var(--spacing-s);
-  text-transform: uppercase;
+  margin-top: 0;
 }
 
 .card__heading{
@@ -92,6 +99,7 @@ h1 {
   text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
   line-height: 1.4;
   word-spacing: 100vw;
+  margin-top: 0;
 }
 
 @media(min-width: 540px){
