@@ -60,7 +60,10 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   text-transform: uppercase;
+  position: relative;
+  padding-top: 10px;
   padding-bottom: 10px;
   list-style: none;
   transform-origin: center;
@@ -77,6 +80,22 @@ h1 {
   transform: scale(1.05) translateZ(0);
 }
 
+.card:before {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  background-color: transparent;
+}
+
+.card-grid:hover > .card:not(:hover)::before {
+  background-color: rgba(204, 204, 204, 0.5);
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
 .card__background {
   display: block;
   margin-bottom: 10px;
@@ -88,7 +107,7 @@ h1 {
 
 .card__category{
   color: #222222;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   margin-bottom: var(--spacing-s);
   margin-top: 0;
 }
